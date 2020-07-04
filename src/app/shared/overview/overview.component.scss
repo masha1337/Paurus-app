@@ -1,5 +1,7 @@
-.app-wrapper {
-    padding: 20px;
+.container {
     height: calc(100vh - 56px);
-    overflow: auto;
+
+    .app-wrapper {
+        padding: 20px;
+    }
 }

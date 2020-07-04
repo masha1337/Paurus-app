@@ -1,14 +1,26 @@
-<div class="login-wrapper">
-    <form>
+<div class="container">
+  <div class="login-wrapper">
+    <form [formGroup]="loginForm" novalidate (ngSubmit)="login()">
+      <div class="row">
+        <div class="col-12 text-center">
+          <i class="pi pi-lock" style="font-size: 4em"></i>
+        </div>
+      </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <label for="inputEmail">Email</label>
+          <input type="email" class="form-control" name="email" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email" [class.is-invalid]="loginForm.get('email').invalid && loginForm.get('email').dirty">
+          <span class="invalid-feedback" *ngIf="(loginForm.get('email').touched || loginForm.get('email').dirty) && loginForm.get('email').invalid">
+            The email address is badly formatted.
+          </span>
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <label for="inputPassword">Password</label>
+          <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Enter password" formControlName="password" [class.is-invalid]="loginForm.get('password').invalid && loginForm.get('password').dirty" autocomplete="off">
+          <span class="invalid-feedback" *ngIf="(loginForm.get('password').touched || loginForm.get('password').dirty) && loginForm.get('password').invalid">
+            Password should be at least 6 characters.
+          </span>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid"><i class="pi pi-spin pi-spinner" *ngIf="loading"></i> Submit</button>
       </form>
+</div>
 </div>

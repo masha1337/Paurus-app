@@ -1,9 +1,28 @@
 .login-wrapper {
-    padding: 50px;
+    padding-top: 70px;
     height: 100vh;
-    overflow: auto;
     form {
+        background: #fff;
+        padding: 30px 30px 60px;
+        border-radius: 5px;
         margin: 0 auto;
-        width: 50%;
+
+        .pi-lock {
+            color: rgb(108, 122, 137);
+        }
+
+        i {
+            vertical-align: sub;
+        }
+    }
+}
+
+@media only screen and (min-width: 991px) {
+    .login-wrapper {
+        padding-top: 150px;
+
+        form {
+            width: 70%;
+        }
     }
 }

@@ -5,4 +5,10 @@ html, body {
     padding: 0;
     margin: 0;
     overflow: hidden;
+    background-color: rgb(218, 223, 225);
+ }
+
+ app-overview, app-login {
+    overflow: auto;
+    display: block;
  }

@@ -5,6 +5,7 @@ import { TableComponent } from '../table/table.component';
 import {TableModule} from 'primeng/table';
 import { SharedRoutingModule } from './shared-routing.module';
 import { SharedComponent } from './shared.component';
+import { LoginService } from '../auth/login/login.service';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,6 @@ import { SharedComponent } from './shared.component';
         TableModule,
         SharedRoutingModule
     ],
-    providers: [],
+    providers: [LoginService],
   })
   export class SharedModule { }
