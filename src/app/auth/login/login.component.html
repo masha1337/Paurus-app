@@ -20,7 +20,11 @@
           Password should be at least 6 characters.
         </span>
       </div>
-      <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid"><i class="pi pi-spin pi-spinner" *ngIf="loading"></i> Submit</button>
+      <div class="row no-gutters">
+        <div class="col-12 text-right">
+          <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid"><i class="pi pi-spin pi-spinner" *ngIf="loading"></i> Submit</button>
+        </div>
+      </div>
     </form>
   </div>
 </div>
