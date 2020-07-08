@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AlertService} from './alert.service';
+import { Alert } from '../dashboard/models';
 
 @Component({
   selector: 'app-alert',
@@ -7,19 +8,21 @@ import {AlertService} from './alert.service';
   styleUrls: ['./alert.component.scss']
 })
 export class AlertComponent implements OnInit {
-    message: string;
     clearMessage: any;
+    alert: Alert;
 
     constructor(private alertService: AlertService) {
     }
 
     ngOnInit() {
-        this.alertService.displayAlert.subscribe(error => {
-            this.message = error;
-            clearTimeout(this.clearMessage);
-            this.clearMessage = setTimeout(() => {
-                this.message = undefined;
-              }, 6000);
+        this.alertService.displayAlert.subscribe(alert => {
+          this.alert = alert;
+          clearTimeout(this.clearMessage);
+          this.clearMessage = setTimeout(() => {
+            if (this.alert) {
+              this.alert.message = undefined;
+            }
+          }, 5000);
         }) 
     }
 }

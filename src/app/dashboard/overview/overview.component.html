@@ -1,0 +1,13 @@
+  <div class="container">
+    <p-progressSpinner *ngIf="!dataLoaded"></p-progressSpinner>
+    <div class="app-wrapper" *ngIf="dataLoaded">
+      <h2>Students</h2>
+      <app-table [tableType]="TABLE_TYPE.Students" [cols]="studentCols" [tableData]="studentData" (pageChange)="onPageChange($event)"></app-table>
+    
+      <h2>Professors</h2>
+      <app-table [tableType]="TABLE_TYPE.Professors" [cols]="professorCols" [tableData]="professorData" (onPageChange)="onPageChange($event)"></app-table>
+    
+      <h2>Courses</h2>
+      <app-table [tableType]="TABLE_TYPE.Courses" [cols]="courseCols" [tableData]="courseData" (onPageChange)="onPageChange($event)"></app-table>
+    </div>
+  </div>

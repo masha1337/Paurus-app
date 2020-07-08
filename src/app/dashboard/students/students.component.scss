@@ -1,0 +1,11 @@
+@import '../../../assets/scss/variables';
+
+.container {
+    .title {
+        font-size: $font-size-xl;
+        margin: 40px 0 20px;
+    }
+    .pi-user-plus {
+        vertical-align: text-bottom;
+    }
+}

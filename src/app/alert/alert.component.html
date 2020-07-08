@@ -1,5 +1,6 @@
 <div class="row no-gutters">
-    <div class="col-12 message" [ngClass]="{'show': message}">
-        <i class="pi pi-exclamation-triangle" *ngIf="message"></i> {{message}}
+    <div class="col-12 alert" 
+    [ngClass]="{'show': alert?.message, 'error': alert?.type === 'error', 'success': alert?.type === 'success'}">
+        <i class="pi pi-exclamation-triangle" *ngIf="alert.message"></i> {{alert.message}}
     </div>
 </div>

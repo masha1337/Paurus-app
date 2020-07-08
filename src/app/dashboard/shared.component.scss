@@ -1,0 +1,15 @@
+.navbar {
+    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.14);
+    .nav-item {
+        margin-right: 20px;
+        a {
+            text-decoration: none;
+            i {
+                vertical-align: text-top;
+            }
+            &.logout {
+                cursor: pointer;
+            }
+        }
+    }
+}

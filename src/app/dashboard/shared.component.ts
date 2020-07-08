@@ -19,7 +19,7 @@ export class SharedComponent {
       sessionStorage.removeItem('user');
       this.router.navigate(['login']);
     }).catch((error) => {
-      this.alertService.displayAlertChange(error.message);
+      this.alertService.displayAlertChange({type: 'error', message: error.message});
     });
   }
 }

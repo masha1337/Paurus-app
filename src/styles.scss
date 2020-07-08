@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import './assets/scss/variables';
 
 html, body {
     padding: 0;
@@ -12,3 +13,38 @@ html, body {
     overflow: auto;
     display: block;
  }
+
+ app-students {
+   overflow: auto;
+   display: block;
+   height: calc(100vh - 54px);
+   padding-bottom: 50px;
+ }
+
+ body {
+   .ui-dropdown, .ui-multiselect {
+      border: 1px solid #ced4da !important;
+      border-radius: .25rem !important;
+      display: block;
+   }
+
+   .ui-progress-spinner {
+      position: absolute;
+      z-index: 100;
+      left: 50%;
+      top: 50%;
+      margin-left: -4em;
+   }
+
+   .ui-paginator {
+      .ui-paginator-pages {
+         display: none !important;
+      }
+   }
+
+   .ui-multiselect {
+      .ui-multiselect-label {
+         color: #495057;
+      }
+   }
+}

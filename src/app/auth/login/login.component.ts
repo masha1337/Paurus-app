@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from './login.service';
 import { AlertService } from 'src/app/alert/alert.service';
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['overview']);
           this.autoLogOut();
         }).catch((error) => {
-          this.alertService.displayAlertChange(error.message);
+          this.alertService.displayAlertChange({type: 'error', message: error.message});
           this.loading = false;
         });
       }
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
             sessionStorage.removeItem('user');
             this.router.navigate(['login']);
           }).catch((error) => {
-            this.alertService.displayAlertChange(error.message);
+            this.alertService.displayAlertChange({type: 'error', message: error.message});
           });
         }, 120000);
       }

@@ -23,6 +23,7 @@
     "@angular/router": "~9.1.11",
     "bootstrap": "^4.5.0",
     "firebase": "^7.13.1",
+    "primeflex": "^2.0.0-rc.1",
     "primeicons": "^1.0.0",
     "primeng": "^9.1.0",
     "rxjs": "~6.5.5",
