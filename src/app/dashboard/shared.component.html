@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <a class="navbar-brand">Fake Academy</a>
+    <a class="navbar-brand" [routerLink]="['/overview']">Fake Academy</a>
     <div class="navbar-collapse collapse">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a [routerLink]="['/overview']">Overview</a>
+          <a [routerLink]="['/overview']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Overview</a>
         </li>
         <li class="nav-item">
-          <a [routerLink]="['students']">Students</a>
+          <a [routerLink]="['students']" routerLinkActive="active">Students</a>
         </li>
         <li class="nav-item">
           <a class="logout" (click)="logoutUser()"><i class="pi pi-sign-out"></i> logout</a>

@@ -4,6 +4,13 @@
         margin-right: 20px;
         a {
             text-decoration: none;
+            color: #000;
+            &.active {
+                color: #007ad9;
+            }
+            &:hover {
+                color: #0056b3;
+            }
             i {
                 vertical-align: text-top;
             }
