@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.11.
 
-Start with running `ng install`
+Start with running `nmp install`
 
 Login:
 
