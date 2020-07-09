@@ -1,24 +1,30 @@
+@import "../../assets/scss/variables";
+
 .alert {
-    margin: 0;
-    z-index: 10;
-    background-color: #fff;
-    min-height: 56px;
-    padding: 15px;
-    text-align: center;
-    position: absolute;
-    bottom: -56px;
-    transition: bottom .5s ease-in-out;
-    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.14);
-    &.show {
-        bottom: 0;
-    }
-    i {
-        vertical-align: sub;
-    }
-    &.error {
-        color: #dc3545;
-    }
-    &.success {
-        color: rgb(42, 187, 155)
-    }
+  margin: 0;
+  z-index: 10;
+  background-color: $white;
+  min-height: 56px;
+  padding: 15px;
+  text-align: center;
+  position: absolute;
+  bottom: -56px;
+  transition: bottom .5s ease-in-out;
+  box-shadow: 0 2px 9px 0 $box-shadow-color;
+
+  &.show {
+    bottom: 0;
+  }
+
+  i {
+    vertical-align: sub;
+  }
+
+  &.error {
+    color: $warning;
+  }
+
+  &.success {
+    color: $success;
+  }
 }

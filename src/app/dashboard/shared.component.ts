@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { LoginService } from '../auth/login/login.service';
-import { Router } from '@angular/router';
-import { AlertService } from '../alert/alert.service';
+import {Component} from '@angular/core';
+import {LoginService} from '../auth/login/login.service';
+import {Router} from '@angular/router';
+import {AlertService} from '../alert/alert.service';
 
 @Component({
   selector: 'app-shared',
@@ -11,8 +11,9 @@ import { AlertService } from '../alert/alert.service';
 export class SharedComponent {
 
   constructor(private loginService: LoginService,
-    private alertService: AlertService,
-    private router: Router){}
+              private alertService: AlertService,
+              private router: Router) {
+  }
 
   logoutUser() {
     this.loginService.logOutUser().then(() => {

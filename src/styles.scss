@@ -7,6 +7,8 @@ html, body {
     margin: 0;
     overflow: hidden;
     background-color: rgb(218, 223, 225);
+    color: $font-color;
+    font-size: $font-size-base;
  }
 
  app-overview, app-login {
@@ -21,6 +23,7 @@ html, body {
    padding-bottom: 50px;
  }
 
+ // primeng component style overrides
  body {
    .ui-dropdown, .ui-multiselect {
       border: 1px solid #ced4da !important;

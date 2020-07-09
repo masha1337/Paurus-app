@@ -5,8 +5,7 @@ import {Injectable} from '@angular/core';
 })
 
 export class AuthService {
-    public isAuthenticated(): boolean {
-        return !!sessionStorage.getItem('user');
-      }
-
+  public isAuthenticated(): boolean {
+    return !!sessionStorage.getItem('user');
+  }
 }

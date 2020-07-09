@@ -6,16 +6,16 @@ import {Student} from 'src/app/dashboard/models';
 
 export class TableService {
 
-    constructor(private firestore: AngularFirestore) {
-    }
+  constructor(private firestore: AngularFirestore) {
+  }
 
-    updateItem(student: Student): Promise<any> {
-        const clonedStudent = Object.assign({}, student);
-        delete clonedStudent.documentId;
-        return this.firestore.collection<Student>('students').doc(student.documentId).update(clonedStudent);
-    }
+  updateItem(student: Student): Promise<any> {
+    const clonedStudent = Object.assign({}, student);
+    delete clonedStudent.documentId;
+    return this.firestore.collection<Student>('students').doc(student.documentId).update(clonedStudent);
+  }
 
-    deleteItem(student: Student): Promise<any> {
-        return this.firestore.collection<Student>('students').doc(student.documentId).delete();
-    }
+  deleteItem(student: Student): Promise<any> {
+    return this.firestore.collection<Student>('students').doc(student.documentId).delete();
+  }
 }

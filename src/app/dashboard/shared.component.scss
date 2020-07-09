@@ -1,22 +1,35 @@
+@import "../../assets/scss/variables";
+
 .navbar {
-    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.14);
-    .nav-item {
-        margin-right: 20px;
-        a {
-            text-decoration: none;
-            color: #000;
-            &.active {
-                color: #007ad9;
-            }
-            &:hover {
-                color: #0056b3;
-            }
-            i {
-                vertical-align: text-top;
-            }
-            &.logout {
-                cursor: pointer;
-            }
-        }
+    box-shadow: 0 2px 9px 0 $box-shadow-color;
+    font-size: $font-size-xl;
+
+    .navbar-brand {
+        font-size: $font-size-xxl;
     }
-}
+  
+    .nav-item {
+      margin-right: 20px;
+  
+      a {
+        text-decoration: none;
+        color: $font-color;
+  
+        &.active {
+          color: $blue;
+        }
+  
+        &:hover {
+          color: #0056b3;
+        }
+  
+        i {
+          vertical-align: text-top;
+        }
+  
+        &.logout {
+          cursor: pointer;
+        }
+      }
+    }
+  }

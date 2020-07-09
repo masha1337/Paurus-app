@@ -1,37 +1,40 @@
 <div class="container">
-    <div class="row">
-        <div class="col-12 title">
-            <i class="pi pi-user-plus"></i> Add student
-        </div>
-        <div class="col-12">  
-            <form [formGroup]="addStudentForm" (ngSubmit)="saveNewStudent()">
-                 <div class="row">
-                    <div class="col-lg-4 col-sm-12">            
-                        <div class="form-group">
-                            <label for="inputFirstName">First name</label>
-                            <input type="text" class="form-control" name="firstName" id="inputFirstName" aria-describedby="firstNameHelp"
-                                placeholder="Enter first name" formControlName="firstName"
-                                [class.is-invalid]="addStudentForm.get('firstName').invalid && addStudentForm.get('firstName').dirty">
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-12">
-                        <div class="form-group">
-                            <label for="inputLastName">Last name</label>
-                            <input type="text" class="form-control" name="lastName" id="inputLastName"
-                                placeholder="Enter last name" formControlName="lastName"
-                                [class.is-invalid]="addStudentForm.get('lastName').invalid && addStudentForm.get('lastName').dirty"
-                                autocomplete="off">
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-12">
-                      <div class="form-group">
-                        <label for="courseSelection">Courses</label>
-                        <p-multiSelect id="courseSelection" [options]="availableCourses | async" formControlName="courses" placeholder="Select a Course" optionLabel="name"></p-multiSelect>
-                      </div>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary" [disabled]="addStudentForm.invalid"><i class="pi pi-spin pi-spinner" *ngIf="loading"></i> Submit</button>
-            </form>
-        </div>
+  <div class="row">
+    <div class="col-12 title">
+      <i class="pi pi-user-plus"></i> Add student
     </div>
+    <div class="col-12">
+      <form [formGroup]="addStudentForm" (ngSubmit)="saveNewStudent()">
+        <div class="row">
+          <div class="col-lg-4 col-sm-12">
+            <div class="form-group">
+              <label for="inputFirstName">First name</label>
+              <input type="text" class="form-control" name="firstName" id="inputFirstName" aria-describedby="firstNameHelp"
+                     placeholder="Enter first name" formControlName="firstName"
+                     [class.is-invalid]="addStudentForm.get('firstName').invalid && addStudentForm.get('firstName').dirty">
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <div class="form-group">
+              <label for="inputLastName">Last name</label>
+              <input type="text" class="form-control" name="lastName" id="inputLastName"
+                     placeholder="Enter last name" formControlName="lastName"
+                     [class.is-invalid]="addStudentForm.get('lastName').invalid && addStudentForm.get('lastName').dirty"
+                     autocomplete="off">
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <div class="form-group">
+              <label for="courseSelection">Courses</label>
+              <p-multiSelect id="courseSelection" [options]="availableCourses | async" formControlName="courses"
+                             placeholder="Select a Course" optionLabel="name"></p-multiSelect>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="addStudentForm.invalid">
+          <i class="pi pi-spin pi-spinner" *ngIf="loading"></i> Submit
+        </button>
+      </form>
+    </div>
+  </div>
 </div>

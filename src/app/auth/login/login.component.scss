@@ -1,28 +1,31 @@
+@import "../../../assets/scss/variables";
+
 .login-wrapper {
     padding-top: 70px;
     height: 100vh;
+  
     form {
-        background: #fff;
-        padding: 30px 30px 60px;
-        border-radius: 5px;
-        margin: 0 auto;
-
-        .pi-lock {
-            color: rgb(108, 122, 137);
-        }
-
-        i {
-            vertical-align: sub;
-        }
+      background: $white;
+      padding: 30px 30px 60px;
+      border-radius: 5px;
+      margin: 0 auto;
+  
+      .pi-lock {
+        color: $dark-grey;
+      }
+  
+      i {
+        vertical-align: sub;
+      }
     }
-}
-
-@media only screen and (min-width: 991px) {
+  }
+  
+  @media only screen and (min-width: 991px) {
     .login-wrapper {
-        padding-top: 150px;
-
-        form {
-            width: 70%;
-        }
+      padding-top: 150px;
+  
+      form {
+        width: 70%;
+      }
     }
-}
+  }

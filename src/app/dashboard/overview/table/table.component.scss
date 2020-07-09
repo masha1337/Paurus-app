@@ -1,24 +1,28 @@
+@import "../../../../assets/scss/variables";
+
 .pi-trash, .pi-pencil {
     cursor: pointer;
     transition: color 0.2s ease-in-out;
-}
-
-.pi-trash {
+  }
+  
+  .pi-trash {
     font-size: 20px;
+  
     &:hover {
-        color: red;
+      color: $warning;
     }
-}
-
-.pi-pencil {
+  }
+  
+  .pi-pencil {
     font-size: 25px;
+  
     &:hover {
-        color: #037AD9;
+      color: $blue;
     }
-}
-
-ul {
+  }
+  
+  ul {
     margin: 0;
     padding: 0;
     list-style: none;
-}
+  }

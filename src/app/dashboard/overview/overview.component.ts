@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Student, Course, Professor, TableType } from '../models';
-import { combineLatest } from 'rxjs';
-import { OverviewService } from './overview.service';
+import {Component, OnInit} from '@angular/core';
+import {Course, Professor, Student, TableType} from '../models';
+import {combineLatest} from 'rxjs';
+import {OverviewService} from './overview.service';
 
 @Component({
   selector: 'app-overview',
@@ -31,6 +31,7 @@ export class OverviewComponent implements OnInit {
     {field: 'professor', header: 'Professor'},
     {field: 'students', header: 'Students'}
   ];
+
   constructor(private overviewService: OverviewService) {
   }
 
@@ -48,28 +49,28 @@ export class OverviewComponent implements OnInit {
   }
 
   onPageChange(data: any) {
-    switch(data.tableType) { 
-      case TableType.Students: { 
+    switch (data.tableType) {
+      case TableType.Students: {
         this.overviewService.getStudents(data.startAt, this.limit).subscribe(res => {
           this.studentData = res;
         });
-         break; 
-      } 
-      case TableType.Courses: { 
-         this.overviewService.getAvailableCourses(data.startAt, this.limit).subscribe(res => {
-           this.courseData = res;
-         });
-         break; 
+        break;
       }
-      case TableType.Professors: { 
+      case TableType.Courses: {
+        this.overviewService.getAvailableCourses(data.startAt, this.limit).subscribe(res => {
+          this.courseData = res;
+        });
+        break;
+      }
+      case TableType.Professors: {
         this.overviewService.getProfessors(data.startAt, this.limit).subscribe(res => {
           this.professorData = res;
         });
-        break; 
-     } 
-      default: {  
-         break; 
-      } 
-   } 
+        break;
+      }
+      default: {
+        break;
+      }
+    }
   }
 }
