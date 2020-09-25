@@ -1,0 +1,36 @@
+image: colthreepv/node-chrome:9
+
+stages:
+  - lint
+  - test
+  - build
+
+cache:
+  key: "%CI_COMMIT_SHA"
+  paths:
+    - node_modules/
+    - dist/
+
+lint:
+  stage: lint
+  script:
+    - rm -f ./package-lock.json
+    - npm install
+    - npm run lint
+  tags:
+    - docker
+
+test:
+  stage: test
+  script:
+    - ./node_modules/@angular/cli/bin/ng test --progress false --browsers ChromeHeadless --watch=false --source-map=false
+  tags:
+    - docker
+
+build:
+  stage: build
+  script:
+    #build
+    - npm run build
+  tags:
+    - docker
